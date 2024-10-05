@@ -1,0 +1,3 @@
+/Users/joannaheldak/Documents/Programming/Obiektowe/Hajduga_4SEM/Lab08/build/CMakeFiles/Polimorphysm.dir
+/Users/joannaheldak/Documents/Programming/Obiektowe/Hajduga_4SEM/Lab08/build/CMakeFiles/edit_cache.dir
+/Users/joannaheldak/Documents/Programming/Obiektowe/Hajduga_4SEM/Lab08/build/CMakeFiles/rebuild_cache.dir
