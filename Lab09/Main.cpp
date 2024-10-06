@@ -38,7 +38,7 @@ należy wgrać do UPEL jako archiwum tar.gz, UWAGA:
 ├── Main.cpp
 ├── include
 │   ...
-│   └── Heder.h
+│   └── Header.h
 └── src
     ...
     └── Body.cpp
@@ -50,10 +50,19 @@ należy wgrać do UPEL jako archiwum tar.gz, UWAGA:
 #include <vector>
 #include <algorithm>
 #include <functional>
+#include <typeinfo>
 #include "Employee.h"
 #include "Manager.h"
 
 // TODO: Define me: sortEmployees(), showEmployers() - wykorzystajcie std::function lub wyrażenie lambda. Albo oba na raz? 
+
+void sortEmployees(std::vector<Employee>& vect,std::function<bool(Employee&,Employee&)>func){
+    std::sort(vect.begin(),vect.end(),func); //func return true if 1st el is less
+}
+auto showEmployers=[](std::vector<Employee>& vect){
+    for(auto &el: vect)
+        std::cout<<el;
+};
 
 int main() {
     // Przykładowi pracownicy i menedżerowie
@@ -66,11 +75,14 @@ int main() {
     Manager man2("Magdalena", 8000.0, 7);
 
     // Wektor pracowników
-    std::vector<Employee> employees = { emp1, emp2, emp3, man1, man2 };
+    std::vector<Employee> employees = { emp1, emp2, emp3, man1, man2 }; 
 
     // Sortowanie pracowników po wynagrodzeniu
-    sortEmployees(employees,  {
-        // TODO: Przykład wyrażenia lambda, lub funkcji?
+    sortEmployees(employees, [](Employee& e1, Employee& e2){
+        if(e1.getSalary() < e2.getSalary())
+            return true;
+        else
+            return false;
     });
 
     // Wyświetlenie posortowanych pracowników
