@@ -43,7 +43,12 @@ int main() {
 
     // Sortujemy pracowników według pensji za pomocą wyrażenia lambda
     // TODO: Napisz wyrażenie lambda, które porównuje pensje pracowników
-    company.sortEmployees( { /* Twoje wyrażenie lambda tutaj */ });
+    company.sortEmployees( [](const Employee& e1,const Employee& e2){
+        if(e1.getSalary()<e2.getSalary())
+            return true;
+        else
+            return false;
+    });
 
 
     std::cout << "Posortowani pracownicy (rosnąco wg pensji):" << std::endl;
@@ -52,7 +57,12 @@ int main() {
 
     // Usuwamy pracowników, którzy spełniają określone kryterium za pomocą wyrażenia lambda
     // TODO: Napisz wyrażenie lambda, które sprawdza, czy pensja pracownika jest mniejsza niż 5000
-    company.removeEmployees( { /* Twoje wyrażenie lambda tutaj */ });
+    company.removeEmployees( [](const Employee& employee){
+        if(employee.getSalary()<5000)
+            return true;
+        else
+            return false;
+    });
 
     std::cout << "Posortowani pracownicy (po zwolnieniach):" << std::endl;
 

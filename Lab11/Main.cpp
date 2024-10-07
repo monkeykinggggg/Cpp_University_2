@@ -59,7 +59,6 @@ int main() {
     mySwap(xS, yS);
     std::cout << "After swap: x=" << xS << ", y=" << yS << std::endl;
 
-
     // You can also try to add different types? 
 
     std::cout << "Sum of 5 and 10.3: " << myAdd(xI, yD) << std::endl;
@@ -87,7 +86,7 @@ int main() {
     intStack.push(2);
     intStack.push(3);
     std::cout << "Popped: " << intStack.pop() << std::endl;
-
+    
     Stack<double> doubleStack(5);
     doubleStack.push(1.5);
     doubleStack.push(2.5);
@@ -95,7 +94,7 @@ int main() {
     std::cout << "Popped: " << doubleStack.pop() << std::endl;
 
     ////////////////////////////////////////////////////////////////
-    
+
     // Creating Circle objects
     Circle<double> circle1(5.0);
     Circle<double> circle2(3.0);
@@ -132,6 +131,7 @@ int main() {
     std::cout << "Factorial of 5: " << Factorial<0>::value << std::endl;  // Compile-time calculation
 
 
+  
     ////////////////////////////////////////////////////////////////
 
     // Some overshooting? 
